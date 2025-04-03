@@ -1,0 +1,24 @@
+'$schema' = 'https://jj-vcs.github.io/jj/latest/config-schema.json'
+
+[aliases]
+tug = ['bookmark', 'move', '--from', 'closest_bookmark(@)', '--to', '@']
+
+[colors]
+'diff added token' = { underline = false }
+'diff removed token' = { underline = false }
+
+[revset-aliases]
+'closest_bookmark(to)' = 'heads(::to & bookmarks())'
+
+[template-aliases]
+'format_short_signature(s)' = 'coalesce(s.name(), name_placeholder)'
+
+[ui]
+diff-editor = ':builtin'
+
+[ui.movement]
+edit = true
+
+[user]
+name = 'Tom Buzbee'
+email = '46201109+tombuzbee@users.noreply.github.com'

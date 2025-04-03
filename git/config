@@ -1,0 +1,12 @@
+[diff]
+	tool = vimdiff
+
+[init]
+	defaultBranch = main
+
+[pull]
+	rebase = true
+
+[user]
+	name = Tom Buzbee
+	email = 46201109+tombuzbee@users.noreply.github.com

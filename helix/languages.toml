@@ -1,0 +1,26 @@
+[[language]]
+name = 'git-config'
+file-types = [
+  { glob = '.gitmodules' },
+  { glob = '.gitconfig' },
+  { glob = '.git/config' },
+  { glob = 'git/config' },
+]
+
+[[language]]
+name = 'json'
+formatter = { command = 'jq' }
+auto-format = true
+
+[[language]]
+name = 'sshclientconfig'
+file-types = [
+  { glob = '.ssh/config' },
+  { glob = 'ssh/config' },
+  { glob = 'ssh_config' },
+  { glob = 'ssh_config.d/*.conf' },
+]
+
+[[language]]
+name = 'toml'
+auto-format = true

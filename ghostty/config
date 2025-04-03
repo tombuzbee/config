@@ -1,0 +1,27 @@
+theme = Kanagawa Wave
+
+background-blur = 30
+background-opacity = 0.9
+font-feature = -calt
+macos-option-as-alt = left
+macos-titlebar-proxy-icon = hidden
+macos-titlebar-style = tabs
+mouse-hide-while-typing = true
+quick-terminal-autohide = false
+quick-terminal-position = bottom
+quick-terminal-screen = mouse
+shell-integration = none
+term = xterm-256color
+window-height = 30
+window-padding-color = extend
+window-padding-x = 6,3
+window-width = 107
+
+keybind = global:cmd+\=toggle_quick_terminal
+
+keybind = alt+-=new_split:down
+keybind = alt+\=new_split:right
+keybind = alt+h=goto_split:left
+keybind = alt+j=goto_split:bottom
+keybind = alt+k=goto_split:top
+keybind = alt+l=goto_split:right

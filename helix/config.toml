@@ -1,0 +1,63 @@
+theme = 'kanagawa'
+
+[editor]
+bufferline = 'multiple'
+color-modes = true
+popup-border = 'all'
+rulers = [100]
+text-width = 100
+# trim-final-newlines = true
+# trim-trailing-whitespace = true
+# word-completion-trigger-length = 2
+
+[editor.cursor-shape]
+insert = 'bar'
+select = 'underline'
+
+[editor.indent-guides]
+character = '▏'
+render = true
+skip-levels = 1
+
+[editor.lsp]
+display-inlay-hints = true
+
+[editor.soft-wrap]
+enable = true
+
+[editor.statusline]
+mode.normal = 'N'
+mode.insert = 'I'
+mode.select = 'S'
+right = [
+  'diagnostics',
+  'selections',
+  'register',
+  'file-encoding',
+  'file-type',
+  'spacer',
+  'position-percentage',
+  'spacer',
+  'position',
+]
+
+[editor.whitespace.render]
+tab = 'all'
+
+[keys.normal]
+A-S = '@<A-s>s.+<ret>:sort<ret>'
+x = 'select_line_below'
+X = 'select_line_above'
+
+[keys.select]
+A-S = '@<A-s>s.+<ret>:sort<ret>'
+x = 'select_line_below'
+X = 'select_line_above'
+
+[keys.normal.C-w]
+'-' = 'hsplit'
+'\' = 'vsplit'
+
+[keys.normal.space]
+l = ':toggle gutters.layout [] ["diagnostics","spacer","line-numbers","spacer","diff"]'
+w = ':toggle soft-wrap.enable'
