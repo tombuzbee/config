@@ -1,7 +1,15 @@
 function fish_jj_prompt
     command -sq jj
-    and jj log 2>/dev/null --no-graph --ignore-working-copy --color always -r @ -T \
-        'if(empty,
-            label("elided", "(empty)"),
-            separate(" ", format_short_change_id(change_id), bookmarks, tags))'
+    and jj log --no-pager --no-graph --color always \
+        -r '@ | latest(::@ & (bookmarks() | immutable_heads()))' \
+        -T 'if(current_working_copy,
+                surround("", " ", coalesce(
+                    bookmarks,
+                    if(!empty, format_short_change_id(change_id)),
+                )),
+                label("rest", stringify(surround("[", "]", coalesce(
+                    bookmarks,
+                    "main",
+                ))))
+            )' 2>/dev/null
 end
