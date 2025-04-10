@@ -1,15 +1,22 @@
 function fish_jj_prompt
     command -sq jj
     and jj log --no-pager --no-graph --color always \
-        -r '@ | latest(::@ & (bookmarks() | immutable_heads()))' \
+        -r '@ | latest(@-) ~ trunk()' \
         -T 'if(current_working_copy,
-                surround("", " ", coalesce(
-                    bookmarks,
-                    if(!empty, format_short_change_id(change_id)),
+                if(empty && description.len() == 0,
+                    label("rest", "∅"),
+                    label("node working_copy", "@")
+                ) ++ label("rest", surround(" (", ")",
+                    if(description.first_line().len() <= 20,
+                        description.first_line(),
+                        description.first_line().substr(0, 20) ++ "…"
+                    )
                 )),
-                label("rest", stringify(surround("[", "]", coalesce(
-                    bookmarks,
-                    "main",
-                ))))
+                label("rest", stringify(surround("──[", "]",
+                    if(description.first_line().len() <= 20,
+                        description.first_line(),
+                        description.first_line().substr(0, 20) ++ "…"
+                    )
+                )))
             )' 2>/dev/null
 end

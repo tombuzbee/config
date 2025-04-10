@@ -27,5 +27,6 @@ abbr jD jj desc
 abbr jd jj diff
 abbr je jj edit
 abbr jl jj log
+abbr jN jj new '"trunk()"'
 abbr jn jj new
 abbr jr jj rebase
