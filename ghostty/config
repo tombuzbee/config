@@ -13,7 +13,6 @@ quick-terminal-screen = mouse
 shell-integration = none
 term = xterm-256color
 window-height = 30
-window-padding-color = extend
 window-padding-x = 6,3
 window-width = 107
 

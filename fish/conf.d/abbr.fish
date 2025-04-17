@@ -1,11 +1,13 @@
 status is-interactive || return
 
-abbr c cd (path dirname (path resolve $__fish_config_dir))
+abbr c cd
+abbr c. cd (path dirname (path resolve $__fish_config_dir))
 abbr cdd cd ~/Desktop
 abbr cdf --set-cursor 'cd (path dirname %)'
 abbr clip fish_clipboard_copy
 abbr e -f __fish_anyeditor
 abbr m sssh mabe
+abbr py python3
 abbr w -p anywhere --set-cursor '(realpath (which %))'
 
 abbr g git status
@@ -27,6 +29,6 @@ abbr jD jj desc
 abbr jd jj diff
 abbr je jj edit
 abbr jl jj log
-abbr jN jj new '"trunk()"'
+abbr jN jj new "'trunk()'"
 abbr jn jj new
 abbr jr jj rebase

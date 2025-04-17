@@ -19,7 +19,3 @@ function fish_prompt
         echo
     end
 end
-
-set -g __fish_git_prompt_color --dim
-set -g __fish_git_prompt_showdirtystate yes
-set -g __fish_git_prompt_showuntrackedfiles yes

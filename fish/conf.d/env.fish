@@ -14,7 +14,8 @@ set -gx MYPY_CACHE_DIR ~/.cache/mypy
 set -gx PYTHONPYCACHEPREFIX ~/.cache/python
 set -gx RUFF_CACHE_DIR ~/.cache/ruff
 
-set -gx EDITOR (path basename (command -s hx vim nvim vi nano)[1])
+set -gx SUDO_EDITOR (command -s hx vim nvim vi nano)[1]
+set -gx EDITOR (path basename $SUDO_EDITOR)
 set -gx PAGER less
 
 set -gx LESS -iR --follow-name
@@ -22,4 +23,3 @@ set -gx --path LS_COLORS 'di=34' 'ex=91' 'ln=35' 'mi=7;31' 'or=7;31' 'ow=34;40' 
     '*.'{bak,class,DS_Store,lock,log,o,pyc,swp,tmp}'=90'
 set -gx MANPAGER less --use-color -Dd+b -DP+Wk
 set -gx MANROFFOPT -c
-set -gx SUDO_EDITOR (which $EDITOR)
