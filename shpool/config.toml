@@ -1,2 +1,0 @@
-forward_env = ['COLORTERM', 'SSH_TTY', 'TERM_PROGRAM']
-prompt_prefix = ''

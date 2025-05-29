@@ -1,6 +1,7 @@
 '$schema' = 'https://jj-vcs.github.io/jj/latest/config-schema.json'
 
 [aliases]
+squish = ['util', 'exec', '--', 'sh', '-c', 'jj squash && jj prev']
 tug = ['bookmark', 'move', '--from', 'closest_bookmark(@)', '--to', '@']
 
 [colors]
@@ -9,6 +10,7 @@ tug = ['bookmark', 'move', '--from', 'closest_bookmark(@)', '--to', '@']
 
 [revset-aliases]
 'closest_bookmark(to)' = 'heads(::to & bookmarks())'
+'T' = 'trunk()'
 
 [template-aliases]
 'format_short_signature(s)' = 'coalesce(s.name(), name_placeholder)'

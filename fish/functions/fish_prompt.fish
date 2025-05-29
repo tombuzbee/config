@@ -4,7 +4,9 @@ function fish_prompt
     set -q SSH_TTY
     and set -a parts (set_color brgreen)(prompt_hostname)
 
-    set -a parts (set_color cyan)'['$SHPOOL_SESSION_NAME']'
+    set -q TMUX
+    and set -a parts (set_color cyan)'['(tmux display -p '#{session_name}')']'
+
     set -a parts (set_color blue)(prompt_pwd -D 3)
     set -a parts (fish_vcs_prompt '%s')
 
