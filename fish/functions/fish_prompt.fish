@@ -1,7 +1,7 @@
 function fish_prompt
     set -l parts
 
-    set -q SSH_TTY
+    set -q SSH_CONNECTION
     and set -a parts (set_color brgreen)(prompt_hostname)
 
     set -q TMUX

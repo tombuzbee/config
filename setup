@@ -10,7 +10,6 @@ for f in * ssh/config; do
     setup|ssh) continue;;
     bin) dest=~/.local/bin;;
     ssh/config) dest=~/.ssh/config;;
-    vim) dest=~/.vim;;
     *) dest=~/.config/"$f";;
   esac
 

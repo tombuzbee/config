@@ -37,8 +37,6 @@ set ignorecase
 set incsearch
 set smartcase
 
-source ~/.vim/helix-keys.vim
-
 nnoremap <silent> <Enter> :noh<Enter>
 vnoremap <silent> <Enter> <Esc>:noh<Enter>gv
 noremap :s/ :s/\v

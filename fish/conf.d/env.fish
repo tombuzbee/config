@@ -1,4 +1,4 @@
-fish_add_path -g ~/.local/bin
+fish_add_path -g ~/Applications ~/bin ~/.local/bin
 
 set -gx FZF_DEFAULT_OPTS_FILE ~/.config/fzf/fzfrc
 set -gx INPUTRC ~/.config/readline/inputrc
