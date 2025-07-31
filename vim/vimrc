@@ -30,6 +30,8 @@ if !has('ide')
 else
   set ideajoin
   set idearefactormode=visual
+
+  source ~/.config/vim/plugin/helix-keys.vim
 endif
 
 set hlsearch
