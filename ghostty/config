@@ -12,14 +12,13 @@ quick-terminal-autohide = false
 quick-terminal-position = bottom
 quick-terminal-screen = mouse
 shell-integration = none
-term = xterm-256color
 window-height = 30
 window-padding-x = 6,3
-window-width = 107
+window-width = 108
 
 keybind = global:cmd+\=toggle_quick_terminal
 
-keybind = alt+-=new_split:down
+keybind = alt+equal=new_split:down
 keybind = alt+\=new_split:right
 keybind = alt+h=goto_split:left
 keybind = alt+j=goto_split:bottom

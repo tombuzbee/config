@@ -55,7 +55,7 @@ x = 'select_line_below'
 X = 'select_line_above'
 
 [keys.normal.C-w]
-'-' = 'hsplit'
+'=' = 'hsplit'
 '\' = 'vsplit'
 
 [keys.normal.space]

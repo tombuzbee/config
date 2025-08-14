@@ -10,8 +10,11 @@ Match host mabe !tagged home
 Match host mbp !tagged home
   ProxyJump ssh.koholi.net
 
+Match !host mabe !host ssh.koholi.net exec 'test "$TERM" = xterm-ghostty'
+  SetEnv TERM=xterm-256color
+
 Host *
-  SendEnv COLORTERM TERM_PROGRAM
+  SendEnv COLORTERM TERM_PROGRAM TERM_PROGRAM_VERSION
   StrictHostKeyChecking no
 
 Include ssh_config.d/*

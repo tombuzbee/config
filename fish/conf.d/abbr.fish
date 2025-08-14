@@ -32,3 +32,17 @@ abbr jl jj log
 abbr jN jj new "'trunk()'"
 abbr jn jj new
 abbr jr jj rebase
+
+if command -q eza
+    abbr ls eza
+    abbr la eza -laa
+    abbr ll eza -l
+    abbr lt eza -T
+end
+
+if test "$(uname)" = Linux
+    abbr jc journalctl
+    abbr jcu journalctl --user
+    abbr sc systemctl
+    abbr scu systemctl --user
+end
