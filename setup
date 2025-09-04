@@ -5,11 +5,10 @@ set -e
 cd "$(dirname "$0")"
 tmp=
 
-for f in * ssh/config; do
+for f in * fish/conf.d fish/functions; do
   case "$f" in
-    setup|ssh) continue;;
+    fish|setup) continue;;
     bin) dest=~/.local/bin;;
-    ssh/config) dest=~/.ssh/config;;
     *) dest=~/.config/"$f";;
   esac
 
@@ -27,8 +26,6 @@ for f in * ssh/config; do
   mkdir -p "$(dirname "$dest")"
   ln -snfv "$PWD/$f" "$dest"
 done
-
-mkdir -p ~/.local/state/{fish,less,python,sqlite3,vim,wget}
 
 touch ~/.hushlogin
 

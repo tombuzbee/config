@@ -17,7 +17,7 @@ if !has('ide')
   set shiftwidth=2
   set smartindent
   set softtabstop=2
-  set viminfofile=~/.local/state/vim/viminfo
+  set viminfofile=~/.local/state/viminfo
 
   colorscheme habamax
 

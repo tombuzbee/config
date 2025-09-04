@@ -27,6 +27,7 @@ set -g fish_color_valid_path --underline
 set -g fish_cursor_insert line blink
 set -g fish_cursor_visual underscore
 set -g fish_greeting
+set -g fish_handle_reflow 1
 set -g fish_pager_color_completion
 set -g fish_pager_color_description cyan
 set -g fish_pager_color_prefix --bold

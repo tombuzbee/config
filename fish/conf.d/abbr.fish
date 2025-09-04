@@ -1,12 +1,12 @@
 status is-interactive || return
 
 abbr c cd
-abbr c. cd (path dirname (path resolve $__fish_config_dir))
+abbr c. cd (path dirname (path dirname (path resolve $__fish_config_dir/conf.d)))
 abbr cdd cd ~/Desktop
 abbr cdf --set-cursor 'cd (path dirname %)'
 abbr clip fish_clipboard_copy
 abbr e -f __fish_anyeditor
-abbr m sssh mabe
+abbr m sssh tom@ssh.koholi.net
 abbr py python3
 abbr w -p anywhere --set-cursor '(realpath (which %))'
 
@@ -33,12 +33,10 @@ abbr jN jj new "'trunk()'"
 abbr jn jj new
 abbr jr jj rebase
 
-if command -q eza
-    abbr ls eza
-    abbr la eza -laa
-    abbr ll eza -l
-    abbr lt eza -T
-end
+abbr l eza
+abbr la eza -laa
+abbr ll eza -l
+abbr lt eza -T
 
 if test "$(uname)" = Linux
     abbr jc journalctl
