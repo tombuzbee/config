@@ -1,57 +1,56 @@
-if !has('ide')
-  unlet! skip_defaults_vim
-  source $VIMRUNTIME/defaults.vim
+unlet! skip_defaults_vim
+source $VIMRUNTIME/defaults.vim
 
-  set autoread
-  set background=dark
-  set colorcolumn=100
-  set expandtab
-  set foldlevel=99
-  set foldmethod=syntax
-  set hidden
-  set linebreak
-  set mouse=a
-  set nojoinspaces
-  set noswapfile
-  set number
-  set shiftwidth=2
-  set smartindent
-  set softtabstop=2
-  set viminfofile=~/.local/state/viminfo
-
-  colorscheme habamax
-
-  let &t_SI = "\e[5 q"
-  let &t_EI = "\e[2 q"
-
-  let g:netrw_banner = 0
-  let g:netrw_dirhistmax = 0
-  let g:netrw_liststyle = 3
-else
-  set ideajoin
-  set idearefactormode=visual
-
-  source ~/.config/vim/plugin/helix-keys.vim
-endif
-
+set autoread
+set background=dark
+set breakindent
+set colorcolumn=+0
+set completeopt=menuone,noselect
+set expandtab
+set hidden
 set hlsearch
 set ignorecase
-set incsearch
+set infercase
+set linebreak
+set list
+set listchars=tab:»\ ,trail:·,extends:❯,precedes:❮,nbsp:␣
+set mouse=a
+set nojoinspaces
+set number
+set scrolloff=3
+set shiftwidth=0
+set shortmess=clTOWotFC
 set smartcase
+set smartindent
+set tabstop=2
+set viminfofile=~/.local/state/viminfo
+set virtualedit=block
+set whichwrap=h,l,<,>,[,]
 
-nnoremap <silent> <Enter> :noh<Enter>
-vnoremap <silent> <Enter> <Esc>:noh<Enter>gv
-noremap :s/ :s/\v
-noremap :p/ :!perl -pe 's/'<Left>
+let mapleader = "\<Space>"
 
-nnoremap <silent> <Space>e :Explore .<Enter>
-nnoremap <silent> <Space>E :Explore<Enter>
-nnoremap <silent> <Space>l :set invnumber<Enter>
-nnoremap <silent> <Space>w :set invwrap<Enter>
+noremap j gj
+noremap k gk
 
-noremap <A--> <C-w>s
-noremap <A-\> <C-w>v
-noremap <A-h> <C-w>h
-noremap <A-j> <C-w>j
-noremap <A-k> <C-w>k
-noremap <A-l> <C-w>l
+nnoremap / :/\v
+nnoremap ? ?/\v
+nnoremap :s/ :s/\v
+nnoremap :p/ :!perl -pe "s/"<Left>
+nnoremap <silent> <Esc> :noh<Enter>
+inoremap <C-k> <C-o>"_D
+
+nnoremap <C-w>= <C-w>s
+nnoremap <C-w>\ <C-w>v
+
+nnoremap <silent> <Leader>e :Explore<Enter>
+nnoremap <silent> <Leader>l :set invnumber<Enter>
+nnoremap <silent> <Leader>w :set invwrap<Enter>
+
+colorscheme habamax
+
+let &t_SI = "\e[5 q"
+let &t_EI = "\e[2 q"
+
+let g:netrw_banner = 0
+let g:netrw_dirhistmax = 0
+let g:netrw_liststyle = 3

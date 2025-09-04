@@ -1,1 +1,35 @@
-../vim/vimrc
+set hlsearch
+set ideajoin
+set idearefactormode=visual
+set ignorecase
+set incsearch
+set smartcase
+set whichwrap=h,l,<,>,[,]
+
+let mapleader = "\<Space>"
+
+noremap j gj
+noremap k gk
+
+nnoremap / :/\v
+nnoremap ? ?/\v
+nnoremap :s/ :s/\v
+nnoremap :p/ :!perl -pe "s/"<Left>
+nnoremap <silent> <Esc> :noh<Enter>
+inoremap <C-k> <C-o>"_D
+
+noremap <A-=> <C-w>s
+noremap <A-\> <C-w>v
+noremap <A-h> <C-w>h
+noremap <A-j> <C-w>j
+noremap <A-k> <C-w>k
+noremap <A-l> <C-w>l
+
+nnoremap <silent> <Leader>l :set invnumber<Enter>
+nnoremap <silent> <Leader>w :set invwrap<Enter>
+
+map <Enter> <Action>(AceWordAction)
+map <Leader>f <Action>(GotoFile)
+map C <Action>(EditorCloneCaretBelow)
+map <A-S-c> <Action>(EditorCloneCaretAbove)
+map gQ <Action>(ReformatCode)

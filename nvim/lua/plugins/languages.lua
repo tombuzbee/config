@@ -19,7 +19,9 @@ vim.lsp.enable {
   'taplo',
 }
 
-require('conform').setup {
+local conform = require('conform')
+conform.setup {
+  default_format_opts = { timeout_ms = 5000 },
   formatters_by_ft = {
     fish = { 'fish_indent' },
     go = { 'gofmt', lsp_format = 'fallback' },
@@ -30,11 +32,10 @@ require('conform').setup {
     yaml = { 'yamlfmt' },
     ['_'] = { 'trim_whitespace' },
   },
-  format_on_save = function(bufnr)
-    return vim.tbl_contains(
-      { 'fish', 'go', 'json', 'lua', 'toml', 'yaml' },
-      vim.bo[bufnr].filetype
-    ) and {}
-  end,
+  format_on_save = {},
 }
-vim.o.formatexpr = 'v:lua.require("conform").formatexpr()'
+
+vim.o.formatexpr = "v:lua.require'conform'.formatexpr({ 'timeout_ms': 5000 })"
+vim.keymap.set('n', 'gQ', conform.format)
+
+vim.api.nvim_set_hl(0, 'fishOption', { link = '@variable.parameter.builtin' })
