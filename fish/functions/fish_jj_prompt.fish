@@ -1,5 +1,6 @@
 function fish_jj_prompt
-    jj log --no-pager --no-graph --color always \
+    command -sq jj
+    and jj log --no-pager --no-graph --color always \
         -r '@ | latest(@-) ~ trunk()' \
         -T 'if(current_working_copy,
                 if(empty && description.len() == 0,

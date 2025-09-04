@@ -14,7 +14,7 @@ set -gx MYPY_CACHE_DIR ~/.cache/mypy
 set -gx PYTHONPYCACHEPREFIX ~/.cache/python
 set -gx RUFF_CACHE_DIR ~/.cache/ruff
 
-set -gx SUDO_EDITOR (command -s hx vim nvim vi nano)[1]
+set -gx SUDO_EDITOR (command -s nvim hx vim vi nano)[1]
 set -gx EDITOR (path basename $SUDO_EDITOR)
 
 set -gx LESS -iR --follow-name
